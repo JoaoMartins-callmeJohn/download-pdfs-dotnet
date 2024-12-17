@@ -37,7 +37,7 @@ namespace downloadpdfs
 					{
 						ManifestResources pdfResource = twodResource.Children.First(ManifestResources => ManifestResources.Mime == "application/pdf");
 						string downloadPDFURL = await GetDerivativeDownloadURLAsync(urn, pdfResource.Urn);
-						tasks.Add(DownloadFileAsync(downloadPDFURL, Path.Combine(path, $"{pdfResource.Urn.Split("/").Last()}.pdf")));
+						tasks.Add(DownloadFileAsync(downloadPDFURL, Path.Combine(path, $"{pdfResource.Urn.Split("/").Last()}")));
 					}
 					catch (Exception ex)
 					{
